@@ -1,0 +1,19 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "build": "esbuild src/script.ts --bundle --outdir=dist",
+    "build:watch": "esbuild src/script.ts --bundle --outdir=dist --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.19.7",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  }
+}
