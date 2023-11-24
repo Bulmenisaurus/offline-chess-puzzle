@@ -1,4 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+main {
+    width: 75vmin;
+}
+
+#chessboard-container {
+    margin-bottom: 10px;
+}
+
 #chessboard {
-    width: 500px;
-    height: 500px;
+    aspect-ratio: 1;
+}
+
+#next-button {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px 5px;
+}
+
+#next-button.yes {
+    background-color: hsl(120, 100%, 50%);
+}
+
+#next-button.no {
+    background-color: hsl(0, 100%, 50%);
 }

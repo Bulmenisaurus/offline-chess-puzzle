@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "lib": ["es2019", "ES6", "es2020", "DOM"],
-    "noImplicitAny": true,
-    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "target": "es2020",
     "strict": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "module": "es6",
-    "resolveJsonModule": true
+    "outDir": "./dist/"
   }
 }
