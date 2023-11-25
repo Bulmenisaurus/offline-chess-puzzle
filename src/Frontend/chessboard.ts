@@ -81,6 +81,10 @@ export class ChessBoard {
 
     loadPuzzle(puzzle: Puzzle) {
         this.boardState.load(puzzle.fen);
+        const puzzleOrientation = puzzle.fen.split(' ')[1] === 'w' ? 'black' : 'white';
+        this.chessGround.set({
+            orientation: puzzleOrientation,
+        });
         this.puzzleMoves = puzzle.moves;
 
         this.doMove(this.puzzleMoves[0]);
