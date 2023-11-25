@@ -74,7 +74,6 @@ export class ChessBoard {
 
             this.doMove(this.puzzleMoves[currentPly]);
         } else {
-            console.log(`Not congratulation :( ex: ${expectedMove}, got ${move.lan}`);
             this.puzzleSolve$.publish({ successful: false });
         }
     }

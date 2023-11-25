@@ -53,6 +53,7 @@ const main = async () => {
         } else {
             nextButton.classList.add('no');
             setRating(getRating() - 10);
+            console.log(`Expected line: ${chessboard.puzzleMoves.slice(1).join(' ')}`);
         }
     });
 
