@@ -36,3 +36,7 @@ main {
 #next-button.no {
     background-color: hsl(0, 100%, 50%);
 }
+
+#title {
+    font-size: 1.5em;
+}

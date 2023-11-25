@@ -13,6 +13,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/puzzle', (req, res) => {
+    // // todo: report typescript bug? when the code in this function is unreachable an error is reported that doesn't exists the the code is reachable
+    // res.json({
+    //     fen: 'r1bq1r2/pp1nnkpQ/5b1B/3pp2P/3P2P1/2P2N2/PPB2P2/1R2K2R b K - 0 20',
+    //     moves: ['f8h8', 'f3g5', 'f6g5', 'h7g7'],
+    //     rating: 2240,
+    // });
+    // return;
+
     const rating = req.query.rating;
 
     if (typeof rating !== 'string') {

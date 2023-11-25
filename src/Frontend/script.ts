@@ -34,11 +34,17 @@ const main = async () => {
 
     const container = document.getElementById('chessboard')!;
     const nextButton = document.getElementById('next-button')!;
+    const title = document.getElementById('title')!;
 
     const chessboard = new ChessBoard(container);
+
     const puzzle = await getPuzzle(getRating());
 
     chessboard.loadPuzzle(puzzle);
+    const fenToMove = puzzle.fen.split(' ')[1];
+    // actual color of the user differs from the color set in the fen, since the fen includes one prerequisite move
+    const toMove = fenToMove === 'w' ? 'Black' : 'White';
+    title.innerText = `${toMove} to move`;
 
     chessboard.puzzleSolve$.subscribe((completion) => {
         if (completion.successful) {
