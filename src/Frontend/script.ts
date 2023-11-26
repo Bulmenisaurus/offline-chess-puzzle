@@ -58,6 +58,13 @@ class PuzzleCache {
     }
 }
 
+const updateTitle = (puzzle: Puzzle, titleElement: HTMLElement) => {
+    const fenToMove = puzzle.fen.split(' ')[1];
+    // actual color of the user differs from the color set in the fen, since the fen includes one prerequisite move
+    const toMove = fenToMove === 'w' ? 'Black' : 'White';
+    titleElement.innerText = `${toMove} to move`;
+};
+
 const main = async () => {
     const [getRating, setRating] = useRating();
 
@@ -72,10 +79,7 @@ const main = async () => {
     const puzzle = await getPuzzle(getRating(), pc);
 
     chessboard.loadPuzzle(puzzle);
-    const fenToMove = puzzle.fen.split(' ')[1];
-    // actual color of the user differs from the color set in the fen, since the fen includes one prerequisite move
-    const toMove = fenToMove === 'w' ? 'Black' : 'White';
-    title.innerText = `${toMove} to move`;
+    updateTitle(puzzle, title);
 
     chessboard.puzzleSolve$.subscribe((completion) => {
         if (completion.successful) {
@@ -95,6 +99,7 @@ const main = async () => {
         const puzzle = await getPuzzle(getRating(), pc);
 
         chessboard.loadPuzzle(puzzle);
+        updateTitle(puzzle, title);
     };
 };
 
